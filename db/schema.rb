@@ -17,9 +17,56 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_16_234454) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.boolean "is_user", default: false, null: false
+    t.boolean "is_garage", default: false, null: false
+    t.boolean "is_service", default: false, null: false
+    t.boolean "is_admin", default: false, null: false
+    t.string "name", default: "", null: false
+    t.string "username", default: "", null: false
+    t.string "bio", default: "", null: false
+    t.string "location", default: "", null: false
+    t.string "website", default: "", null: false
+    t.string "role", default: "", null: false
+    t.string "status", default: "", null: false
+    t.string "phone", default: "", null: false
+    t.string "mobile_phone", default: "", null: false
+    t.string "whatsapp", default: "", null: false
+    t.string "garage_name", default: "", null: false
+    t.string "garage_address", default: "", null: false
+    t.string "garage_city", default: "", null: false
+    t.string "garage_state", default: "", null: false
+    t.string "garage_zip", default: "", null: false
+    t.string "garage_phone", default: "", null: false
+    t.string "garage_mobile_phone", default: "", null: false
+    t.string "garage_whatsapp", default: "", null: false
+    t.string "garage_website", default: "", null: false
+    t.string "garage_email", default: "", null: false
+    t.string "garage_hours", default: "", null: false
+    t.string "garage_services", default: "", null: false
+    t.string "garage_certifications", default: "", null: false
+    t.string "garage_payment_options", default: "", null: false
+    t.string "service_name", default: "", null: false
+    t.string "service_address", default: "", null: false
+    t.string "service_city", default: "", null: false
+    t.string "service_state", default: "", null: false
+    t.string "service_zip", default: "", null: false
+    t.string "service_phone", default: "", null: false
+    t.string "service_mobile_phone", default: "", null: false
+    t.string "service_whatsapp", default: "", null: false
+    t.string "service_website", default: "", null: false
+    t.string "service_email", default: "", null: false
+    t.string "service_hours", default: "", null: false
+    t.string "service_services", default: "", null: false
+    t.string "service_certifications", default: "", null: false
+    t.string "service_payment_options", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
