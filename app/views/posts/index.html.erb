@@ -1,12 +1,17 @@
 <div class="p-5">
-  <div class="card mb-5">
-    <img src="https://images.unsplash.com/photo-1532331532-5c3f52d83602?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="card-img-top cover" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Nome da Garagem</h5>
-      <p class="card-text">Endereço completo da garage, com telefone, whatsapp e email.</p>
-      <p class="card-text"><small class="text-muted">Nome do contato da garagem</small></p>
+  <% @users.each do |user| %>
+    <div class="card mb-5">
+      <img src="https://images.unsplash.com/photo-1532331532-5c3f52d83602?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="card-img-top cover" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= @user.garage_name %></h5>
+        <p class="card-text"><%= @user.garage_address %></p>
+        <div class="d-flex justify-content-between">
+          <p class="card-text"><small class="text-muted"><%= @user.name %></small></p>
+          <%= link_to "Novo Carro", new_user_post_path(user) %>
+        </div>
+      </div>
     </div>
-  </div>
+  <% end %>
   <div class="row">
     <% @posts.each do |post| %>
       <div class="col-sm-3 text-center">
@@ -14,7 +19,8 @@
           <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Ferrari</h5>
-            <p class="card-text">Essa é só pra quem é burgues aqui no Japão, aquele povo que veio mas tem fazenda no Brasil.</p>
+            <p class="card-text">Essa é só pra quem é burgues aqui no Japão, aquele povo que veio mas tem fazenda no
+              Brasil.</p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">$ 1.000.000.000</li>

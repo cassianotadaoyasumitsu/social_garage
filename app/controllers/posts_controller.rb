@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_user, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
-    @user = User.find(params[:user_id])
+    @users = User.all
     @posts = @user.posts
   end
 
