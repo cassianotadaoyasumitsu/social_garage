@@ -10,9 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_16_234454) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_17_034831) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.text "body", default: "", null: false
+    t.string "contact", default: "", null: false
+    t.string "location", default: "", null: false
+    t.string "category", default: "", null: false
+    t.string "status", default: "", null: false
+    t.string "value", default: "", null: false
+    t.string "km", default: "", null: false
+    t.string "year", default: "", null: false
+    t.string "color", default: "", null: false
+    t.string "gear", default: "", null: false
+    t.string "brand", default: "", null: false
+    t.string "model", default: "", null: false
+    t.string "version", default: "", null: false
+    t.string "fuel", default: "", null: false
+    t.text "description", default: "", null: false
+    t.string "rank", default: "", null: false
+    t.string "detail", default: "", null: false
+    t.string "payment_type", default: "", null: false
+    t.string "delivery", default: "", null: false
+    t.string "warranty", default: "", null: false
+    t.string "plate", default: "", null: false
+    t.string "shaken", default: "", null: false
+    t.string "shaken_until", default: "", null: false
+    t.string "service_type", default: "", null: false
+    t.string "service_category", default: "", null: false
+    t.string "service_status", default: "", null: false
+    t.string "service_value", default: "", null: false
+    t.string "service_title", default: "", null: false
+    t.string "service_contact", default: "", null: false
+    t.string "service_location", default: "", null: false
+    t.string "service_address", default: "", null: false
+    t.string "service_phone", default: "", null: false
+    t.text "service_body", default: "", null: false
+    t.string "service_rank", default: "", null: false
+    t.string "service_detail", default: "", null: false
+    t.string "service_payment_type", default: "", null: false
+    t.string "service_delivery", default: "", null: false
+    t.string "service_warranty", default: "", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,6 +78,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_16_234454) do
     t.string "mobile_phone", default: "", null: false
     t.string "whatsapp", default: "", null: false
     t.string "garage_name", default: "", null: false
+    t.string "garage_bio", default: "", null: false
     t.string "garage_address", default: "", null: false
     t.string "garage_city", default: "", null: false
     t.string "garage_state", default: "", null: false
@@ -46,6 +93,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_16_234454) do
     t.string "garage_certifications", default: "", null: false
     t.string "garage_payment_options", default: "", null: false
     t.string "service_name", default: "", null: false
+    t.string "service_bio", default: "", null: false
     t.string "service_address", default: "", null: false
     t.string "service_city", default: "", null: false
     t.string "service_state", default: "", null: false
@@ -73,4 +121,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_16_234454) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "posts", "users"
 end

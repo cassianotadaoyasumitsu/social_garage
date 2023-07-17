@@ -1,4 +1,10 @@
-<div class="text-center">
-  <h1>Social Garage</h1>
-  <p>Sua rede social para compra e venda de veículos!</p>
+<div class="p-5">
+  <div class="text-center">
+    <h1>Social Garage</h1>
+    <p>Sua rede social para compra e venda de veículos!</p>
+  </div>
+
+  <% @users.each do |user| %>
+    <%= link_to user.email, user_posts_path(user) %>
+  <% end %>
 </div>

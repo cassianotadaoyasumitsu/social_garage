@@ -27,6 +27,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
 
       ## Garage Info
       t.string :garage_name, null: false, default: ""
+      t.string :garage_bio, null: false, default: ""
       t.string :garage_address, null: false, default: ""
       t.string :garage_city, null: false, default: ""
       t.string :garage_state, null: false, default: ""
@@ -43,6 +44,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
 
       ## Services info
       t.string :service_name, null: false, default: ""
+      t.string :service_bio, null: false, default: ""
       t.string :service_address, null: false, default: ""
       t.string :service_city, null: false, default: ""
       t.string :service_state, null: false, default: ""
