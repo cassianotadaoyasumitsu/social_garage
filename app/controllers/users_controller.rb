@@ -44,10 +44,14 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :name, :phone, :address, :rank, :detail, :payment_type, :delivery, :warranty,
-                                 :plate, :shaken, :shaken_until, :service_type, :service_category, :service_status,
-                                 :service_value, :service_title, :service_contact, :service_location, :service_address,
-                                 :service_phone, :service_body, :service_rank, :service_detail, :service_payment_type,
-                                 :service_delivery, :service_warranty)
+    params.require(:user).permit(:email, :password, :password_confirmation, :is_user, :is_garage, :is_service, :is_admin,
+                                 :name, :username, :bio, :location, :website, :role, :status, :phone, :mobile_phone, :whatsapp,
+                                 :garage_name, :garage_bio, :garage_address, :garage_city, :garage_state, :garage_zipcode,
+                                 :garage_phone, :garage_mobile_phone, :garage_whatsapp, :garage_email, :garage_website,
+                                 :garage_hours, :garage_services, :garage_certifications, :garage_payment_options,
+                                 :service_name, :service_bio, :service_address, :service_city, :service_state, :service_zipcode,
+                                 :service_phone, :service_mobile_phone, :service_whatsapp, :service_email, :service_website,
+                                 :service_hours, :service_services, :service_certifications, :service_payment_options)
+
   end
 end

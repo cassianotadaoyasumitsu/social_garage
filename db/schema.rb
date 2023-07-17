@@ -78,6 +78,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_17_034831) do
     t.string "mobile_phone", default: "", null: false
     t.string "whatsapp", default: "", null: false
     t.string "garage_name", default: "", null: false
+    t.string "garage_bio", default: "", null: false
     t.string "garage_address", default: "", null: false
     t.string "garage_city", default: "", null: false
     t.string "garage_state", default: "", null: false
@@ -92,6 +93,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_17_034831) do
     t.string "garage_certifications", default: "", null: false
     t.string "garage_payment_options", default: "", null: false
     t.string "service_name", default: "", null: false
+    t.string "service_bio", default: "", null: false
     t.string "service_address", default: "", null: false
     t.string "service_city", default: "", null: false
     t.string "service_state", default: "", null: false
