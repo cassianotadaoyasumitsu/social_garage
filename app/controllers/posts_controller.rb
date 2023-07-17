@@ -2,10 +2,12 @@ class PostsController < ApplicationController
   before_action :set_user, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all
+    @user = User.find(params[:user_id])
+    @posts = @user.posts
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -13,9 +15,10 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new(post_params)
     @post.user = @user
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      redirect_to user_posts_path, notice: 'Post was successfully created.'
     else
       render :new
     end

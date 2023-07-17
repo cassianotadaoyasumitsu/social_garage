@@ -1,0 +1,32 @@
+<div class="p-5">
+  <div class="card mb-5">
+    <img src="https://images.unsplash.com/photo-1532331532-5c3f52d83602?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="card-img-top cover" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Nome da Garagem</h5>
+      <p class="card-text">Endereço completo da garage, com telefone, whatsapp e email.</p>
+      <p class="card-text"><small class="text-muted">Nome do contato da garagem</small></p>
+    </div>
+  </div>
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col-sm-3 text-center">
+        <div class="card mb-5">
+          <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Ferrari</h5>
+            <p class="card-text">Essa é só pra quem é burgues aqui no Japão, aquele povo que veio mas tem fazenda no Brasil.</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">$ 1.000.000.000</li>
+            <li class="list-group-item">0 - KM</li>
+            <li class="list-group-item">Único dono</li>
+          </ul>
+          <div class="card-body">
+            <%= link_to "Mostrar", user_post_path(@user, post) %>
+            <a href="#" class="card-link">Garagem link</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
